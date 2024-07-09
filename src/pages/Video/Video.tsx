@@ -27,7 +27,7 @@ function Video() {
             <div className="video-title">
               <h1>Все видео</h1>
             </div>
-            <VideoList/>
+            {/* <VideoList/> */}
           </div>
         </div>
       </div>
