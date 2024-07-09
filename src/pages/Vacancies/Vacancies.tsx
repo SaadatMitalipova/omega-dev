@@ -37,10 +37,10 @@ function Vacancies() {
               {data &&
                 data.map((item: any) => (
                   <JobList
-                    organization_name={item?.organizatiom_name}
+                    organization_name={item?.organization_name}
                     companyRole={item?.position}
-                    salary={`${item?.price_from} - ${item?.price_to} ${item?.current} ${item?.salary}`}
-                    jobType={item?.jobType}
+                    salary={`${item?.price_from}${item?.price_to > 0 ? `- ${item?.price_to}` : ''} ${item?.currency} ${item?.salary}`}
+                    jobType={item?.type}
                   />
                 ))}
             </div>
