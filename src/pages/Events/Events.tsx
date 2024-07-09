@@ -1,19 +1,19 @@
 import Footer from "../../Companent/Footer/Footer";
 import Header from "../../Companent/Header/Header";
-import Automotion from "./Automation/automation";
-import Awards from "./Awards/awards";
-import Battle from "./Battle/battle";
-import Expo from "./Expo/expo";
-import Kitforum from "./KitForum/kitforum";
-import Sql from "./SQL/sql";
-import useFetch from "../../hooks/useFetch";
-
 import "./Events.css";
+import useFetch from "../../hooks/useFetch";
+import { EventPageList } from "../../Companent/EventPageList/EventPageList";
 
 function Events() {
   const { data, isLoading } = useFetch({
-    url: "http://3.34.200.34/events",
+    API_URL: "http://3.38.98.134/events",
   });
+  // console.log("data: ", data);
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <>
       <Header />
@@ -23,17 +23,27 @@ function Events() {
             <div className="events__button">
               <button>Добавить мероприятие</button>
             </div>
+
+            {data &&
+              data.map((item: any) => (
+                <EventPageList
+                  imgUrl={item?.cover}
+                  date={item?.date}
+                  eventsName={item?.name}
+                  organizationName={item?.organization_name}
+                  locations={item?.location}
+                />
+              ))}
+          </div>
+          <div className="btns">
+            <button className="btn previous">Предыдующая страница</button>
+            <button className="btn next">Cледующая страница</button>
           </div>
         </div>
       </div>
-      <Sql />
-      <Automotion />
-      <Battle />
-      <Kitforum />
-      <Awards />
-      <Expo />
       <Footer />
     </>
   );
 }
+
 export default Events;

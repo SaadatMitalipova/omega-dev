@@ -6,10 +6,15 @@ import useFetch from "../../hooks/useFetch";
 import { JobList } from "../../Companent/JobList/JobList";
 
 function Vacancies() {
-  const { data, isLoading } = useFetch();
+  const { data, isLoading } = useFetch({
+    API_URL: "http://3.38.98.134/jobs",
+  });
+  // console.log("data: ", data);
+
   if (isLoading) {
     return <div>Loading...</div>;
   }
+
   return (
     <>
       <Header />
@@ -32,10 +37,10 @@ function Vacancies() {
               {data &&
                 data.map((item: any) => (
                   <JobList
-                    companyName={item?.organization_name || ""}
-                    companyRole={item?.position || ""}
-                    salary={`${item?.price_from} - ${item?.price_to} ${item?.currency},  ${item?.salary}`}
-                    jobType={item?.type || ""}
+                    organization_name={item?.organizatiom_name}
+                    companyRole={item?.position}
+                    salary={`${item?.price_from} - ${item?.price_to} ${item?.current} ${item?.salary}`}
+                    jobType={item?.jobType}
                   />
                 ))}
             </div>

@@ -1,23 +1,23 @@
 import { useEffect, useState } from "react";
 
-const useFetch = ({
-  url
-} = {
-  url: 'http://3.34.200.34/jobs'
-}) => {
+const useFetch = (
+  { API_URL } = {
+    API_URL: "http://3.38.98.134/",
+  }
+) => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const fetchData = async () => {
     setIsLoading(true);
     try {
-      const response = await fetch(url);
+      const response = await fetch(API_URL);
       const data = await response.json();
       if (data.success) {
         setData(data.data);
       }
     } catch (error) {
-      console.error('Error fetching data:', error);
+      console.error("Error fetching data:", error);
     } finally {
       setIsLoading(false);
     }
@@ -31,6 +31,6 @@ const useFetch = ({
     isLoading,
     data,
   };
-}
+};
 
 export default useFetch;
