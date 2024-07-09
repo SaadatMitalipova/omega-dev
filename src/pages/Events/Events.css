@@ -1,140 +1,142 @@
-.events__button{
-    display: flex;
-    align-items: center;
-    justify-content: end;
-    margin-bottom: 2pc;
+.events__button {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  margin-bottom: 2pc;
 }
 
-.events__button button{
-    padding: 1px 18px;
-    border: none;
-    background: rgb(47, 225, 157);
-    color: #f7f7f7;
-    filter: ();
+.events__button button {
+  padding: 1px 18px;
+  border: none;
+  background: rgb(47, 225, 157);
+  color: #f7f7f7;
+  filter: ();
 }
 
 .login-prompt {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .login-box {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 .login-box p {
-    margin: 10px 0;
+  margin: 10px 0;
 }
 
 .login-button {
-    background-color: #0088cc;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 10px;
+  background-color: #0088cc;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
 }
 
 .login-button:hover {
-    background-color: #0077b3;
+  background-color: #0077b3;
 }
 
 .note {
-    font-size: 12px;
-    color: #666;
-    margin-top: 20px;
+  font-size: 12px;
+  color: #666;
+  margin-top: 20px;
 }
 
-.events-item{
-    display: flex;
-    flex-direction: column;
-    background: rgb(30, 46, 51);
-    margin: 20px 0 20px 0;
+.events-item {
+  display: flex;
+  flex-direction: column;
+  background: rgb(26, 30, 31);
+  margin: 20px 0 20px 0;
+  opacity: 0.5;
+  filter: blur(9px);
+  transform: scale(1);
+  padding-top: 15px;
+  font-weight: 700;
+  color: #fff;
 }
 
-.events-date{
-    padding: 20px 30px;
+.events-date {
+  padding: 20px 30px;
 }
 
-time{
-    color:#fff ;
+time {
+  color: #fff;
 }
 
-.events-title{
-    margin: 200px 0 50px 30px;
-    color: #fff;
-    font-size: 27px;
+.events-title {
+  margin: 200px 0 50px 30px;
+  color: #fff;
+  font-size: 27px;
+  font-weight: 800;
 }
 
-.events-mate{
-    font-size: 20px;
-    display: flex;
-    gap: 7pc;
-    margin: 0 0 50px 30px;
-    color: #fff;
+.events-mate {
+  font-size: 20px;
+  display: flex;
+  gap: 7pc;
+  margin: 0 0 50px 30px;
+  color: #fff;
 }
 
-.btns{
-    display: flex;
-    justify-content: center;
-    gap: 30px;
+.btns {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
 }
-
 
 @media (max-width: 800px) {
-
-    .events-title{
-        margin: 250px 0 40px 30px;
-        color: #fff;
-        /* font-size: 20px; */
-    }
+  .events-title {
+    margin: 250px 0 40px 30px;
+    color: #fff;
+    /* font-size: 20px; */
+  }
 }
 
 @media (max-width: 660px) {
+  .events-title {
+    margin: 170px 0 40px 30px;
+    color: #fff;
+    font-size: 27px;
+  }
 
-    .events-title{
-        margin: 170px 0 40px 30px;
-        color: #fff;
-        font-size: 27px;
-    }
-
-    .events-mate{
-        font-size: 20px;
-        display: flex;
-        flex-direction: column;
-        gap: 2pc;
-        margin: 0 0 50px 30px;
-        color: #fff;
-    }
+  .events-mate {
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 2pc;
+    margin: 0 0 50px 30px;
+    color: #fff;
+  }
 }
 
 @media (max-width: 537px) {
+  .events-date {
+    padding: 20px 30px;
+    display: flex;
+    justify-content: end;
+  }
 
-    .events-date{
-        padding: 20px 30px;
-        display: flex;
-        justify-content: end;
-    }
+  .btns {
+    display: flex;
+    flex-direction: column;
+  }
 
-    .btns{
-        display: flex;
-        flex-direction: column;
+  .previous {
+    margin-left: 1pc;
+  }
 
-    }
-
-    .previous{
-        margin-left: 1pc;
-    }
-
-    .next{
-        margin-left: 2pc;
-    }
+  .next {
+    margin-left: 2pc;
+  }
 }

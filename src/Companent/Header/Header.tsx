@@ -37,11 +37,11 @@ function Header() {
           </div>
 
           <div className="header__nav">
-            <Link to="/vacancies">Вакансии</Link>
-            <Link to="/events">Мероприятия</Link>
-            <Link to="/video">Видео</Link>
-            <Link to="/organizations">Организации</Link>
-            <Link to="/community">Сообщество</Link>
+            <Link className="LinkNav" to="/vacancies">Вакансии</Link>
+            <Link className="LinkNav" to="/events">Мероприятия</Link>
+            <Link className="LinkNav" to="/video">Видео</Link>
+            <Link className="LinkNav" to="/organizations">Организации</Link>
+            <Link className="LinkNav" to="/community">Сообщество</Link>
           </div>
           <div className="header__menu-and-clicker">
             <div className="header__burger" onClick={toggleBurgerMenu}>
