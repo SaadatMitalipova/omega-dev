@@ -1,35 +1,43 @@
-// import logo from "../../assets/Images/logo.jpg";
+import logo from "../../assets/Images/logo.jpg";
 export const VideoList = ({
   organization_name,
+  title,
+  date,
+  cover,
 }: {
   organization_name: string;
+  title: string;
+  date: number;
+  cover: any;
 }) => {
   return (
     <>
-      <div className="video-block">
-        <div className="main-block">
-          <div className="first__block">
-            <img src={""} alt="img" />
-            <div className="first__block-title">
-              <h2>
-                {" "}
-                ChatGPT — революция или мода? Как <br />
-                нейросети могут помочь в работе
-              </h2>
+      <div className="meetups-page-items">
+        <article className="meetups-wrapper item">
+          <a
+            href="/ru/meetups/chatgpt-revolyuciya-ili-moda-kak-neyroseti-mogut-pomoch-v-rabote-kolesa-group-138"
+            className="meetups-item"
+          >
+            <div className="preview dark image">
+              <picture>
+                <img src={cover} alt="" />
+              </picture>
             </div>
-            <br />
-            <div className="first__block-organizer">
-              <span>Организатор</span>
-
-              <h3>{organization_name}</h3>
+            <div className="meta">
+              <div data-v-4ff14bbb className="title">{title}</div>
+              <div className="meetups-info">
+                <div className="organizer">
+                  <span className="label">Организатор</span>
+                  {organization_name}
+                </div>
+                <div className="date">
+                  <span className="label">Когда</span>
+                  <time dateTime="2023-09-12T06:10:05.6742">{date}</time>
+                </div>
+              </div>
             </div>
-            <div className="first__block-data">
-              <span>Когда</span>
-              <br />
-              <h3>12 сентября 2023</h3>
-            </div>
-          </div>
-        </div>
+          </a>
+        </article>
       </div>
     </>
   );
