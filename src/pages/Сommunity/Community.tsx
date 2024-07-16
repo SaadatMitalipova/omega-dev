@@ -1,8 +1,44 @@
+import { useEffect, useState } from "react";
+import { FacebookList } from "../../Companent/FacebookList/FacebookList";
 import Footer from "../../Companent/Footer/Footer";
+import { GitHubList } from "../../Companent/GitHubList/GitHubList";
 import Header from "../../Companent/Header/Header";
+import { OurResources } from "../../Companent/OurResources/OurResources";
+import { TelegramChat } from "../../Companent/TelegramChat/telegramCgat";
+import { TGChannels } from "../../Companent/TGchannels/TGChannels";
+import { Websites } from "../../Companent/WebSites/WebSites";
+import { YouTubeList } from "../../Companent/YouTubeList/YouTubeList";
+import useFetch from "../../hooks/useFetch";
 import "../Сommunity/Community.css";
 
 function Community() {
+  const { data, isLoading } = useFetch({
+    API_URL: "http://3.38.98.134/community",
+  });
+  const [telegram, setTelegram] = useState([]);
+  const [telegramChat, setTelegramChat] = useState([]);
+  const [tgChannels, setTGChannels] = useState([]);
+  const [webSites, setWebSites] = useState([]);
+  const [facebook, setFacebook] = useState([]);
+  const [youTube, setYouTube] = useState([]);
+  const [gitHub, setGitHub] = useState([]);
+
+  useEffect(() => {
+    if (isLoading === false) {
+      setTelegramChat(data[0]?.devkg);
+      setTelegram(data[0]?.telegram_chats);
+      setTGChannels(data[0]?.telegram_channels);
+      setWebSites(data[0]?.websites);
+      setFacebook(data[0]?.facebook);
+      setYouTube(data[0]?.youtube);
+      setGitHub(data[0]?.github);
+      // console.log("data");
+    }
+  }, [isLoading]);
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
   return (
     <>
       <div id="community">
@@ -21,111 +57,13 @@ function Community() {
                   </button>
                 </div>
                 <aside data-v-a2ede7f6 className="share-box"></aside>
-                <section data-v-a2ede7f6 className="block devkg">
-                  <section data-v-a2ede7f6 className="block devkg">
-                    <h4 data-v-a2ede7f6 className="title">
-                      Наши ресурсы в Telegram
-                    </h4>
-                    <a data-v-a2ede7f6 href="/" className="item">
-                      <img
-                        className="icon icon-devkg"
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT72LJm5Em_1UXq5xStSgkCug4IDZAce62RJw&usqp=CAU"
-                        alt=""
-                      />
-                      Общий чат
-                    </a>
-                  </section>
-                </section>
-                <section data-v-a2ede className="block telegram_chats">
-                  <section data-v-a2ede7f6 className="block devkg">
-                    <h4 data-v-a2ede7f6 className="title">
-                      Телеграм чаты
-                    </h4>
-                    <a data-v-a2ede7f6 href="/" className="item">
-                      <img
-                        className="icon icon-devkg"
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT72LJm5Em_1UXq5xStSgkCug4IDZAce62RJw&usqp=CAU"
-                        alt=""
-                      />
-                      React KG
-                    </a>
-                  </section>
-                </section>
-                <section data-v-a2ede7f6 className="block telegram_channels">
-                  <section data-v-a2ede7f6 className="block devkg">
-                    <h4 data-v-a2ede7f6 className="title">
-                      Телеграм каналы
-                    </h4>
-                    <a data-v-a2ede7f6 href="/" className="item">
-                      <img
-                        className="icon icon-devkg"
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT72LJm5Em_1UXq5xStSgkCug4IDZAce62RJw&usqp=CAU"
-                        alt=""
-                      />
-                      Всё о Python
-                    </a>
-                  </section>
-                </section>
-                <section data-v-a2ede7f6 className="block websites">
-                  <section data-v-a2ede7f6 className="block devkg">
-                    <h4 data-v-a2ede7f6 className="title">
-                      Веб-сайты
-                    </h4>
-                    <a data-v-a2ede7f6 href="/" className="item">
-                      <img
-                        className="icon icon-devkg"
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT72LJm5Em_1UXq5xStSgkCug4IDZAce62RJw&usqp=CAU"
-                        alt=""
-                      />
-                      Lance.kg
-                    </a>
-                  </section>
-                </section>
-                <section data-v-a2ede7f6 className="block facebook">
-                  <section data-v-a2ede7f6 className="block devkg">
-                    <h4 data-v-a2ede7f6 className="title">
-                      Facebook
-                    </h4>
-                    <a data-v-a2ede7f6 href="/" className="item">
-                      <img
-                        className="icon icon-devkg"
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT72LJm5Em_1UXq5xStSgkCug4IDZAce62RJw&usqp=CAU"
-                        alt=""
-                      />
-                      IT-Club Kyrgyzstan
-                    </a>
-                  </section>
-                </section>
-                <section data-v-a2ede7f6 className="block youtube">
-                  <section data-v-a2ede7f6 className="block devkg">
-                    <h4 data-v-a2ede7f6 className="title">
-                      YouTube
-                    </h4>
-                    <a data-v-a2ede7f6 href="/" className="item">
-                      <img
-                        className="icon icon-devkg"
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT72LJm5Em_1UXq5xStSgkCug4IDZAce62RJw&usqp=CAU"
-                        alt=""
-                      />
-                      DevKG
-                    </a>
-                  </section>
-                </section>
-                <section data-v-a2ede7f6 className="block github">
-                  <section data-v-a2ede7f6 className="block devkg">
-                    <h4 data-v-a2ede7f6 className="title">
-                      GitHub
-                    </h4>
-                    <a data-v-a2ede7f6 href="/" className="item">
-                      <img
-                        className="icon icon-devkg"
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT72LJm5Em_1UXq5xStSgkCug4IDZAce62RJw&usqp=CAU"
-                        alt=""
-                      />
-                      Devskgy
-                    </a>
-                  </section>
-                </section>
+                <OurResources data={telegram} />
+                <TelegramChat data={telegramChat} />
+                <TGChannels data={tgChannels} />
+                <Websites data={webSites} />
+                <FacebookList data={facebook} />
+                <YouTubeList data={youTube} />
+                <GitHubList data={gitHub} />
                 <div data-v-a2ede7f6 className="padding-top"></div>
               </div>
             </div>
