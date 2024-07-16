@@ -20,7 +20,7 @@ function Community() {
   const [tgChannels, setTGChannels] = useState([]);
   const [webSites, setWebSites] = useState([]);
   const [facebook, setFacebook] = useState([]);
-  const [youTube, setYouTube] = useState([]);
+  const [youtube, setYouTube] = useState([]);
   const [gitHub, setGitHub] = useState([]);
 
   useEffect(() => {
@@ -62,7 +62,7 @@ function Community() {
                 <TGChannels data={tgChannels} />
                 <Websites data={webSites} />
                 <FacebookList data={facebook} />
-                <YouTubeList data={youTube} />
+                <YouTubeList data={youtube} />
                 <GitHubList data={gitHub} />
                 <div data-v-a2ede7f6 className="padding-top"></div>
               </div>
