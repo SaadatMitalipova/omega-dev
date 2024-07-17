@@ -34,8 +34,9 @@ function Video() {
             </div>
             <div className="meetups-content">
               {data &&
-                data.map((item: any) => (
+                data.map((item: any, index: number) => (
                   <VideoList
+                    key={index}
                     organization_name={item?.organization_name}
                     title={item?.title}
                     date={item?.date}

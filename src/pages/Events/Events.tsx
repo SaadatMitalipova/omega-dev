@@ -25,8 +25,9 @@ function Events() {
             </div>
 
             {data &&
-              data.map((item: any) => (
+              data.map((item: any, index: number) => (
                 <EventPageList
+                  key={index}
                   imgUrl={item?.cover}
                   date={item?.date}
                   eventsName={item?.name}
