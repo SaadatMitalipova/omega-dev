@@ -1,13 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { SlArrowRightCircle } from "react-icons/sl";
 import { VscClose } from "react-icons/vsc";
 import "./Header.css";
-import ToComeIn from "../../pages/ToComeIn/ToComeIn";
+import Cookies from "js-cookie";
 
 function Header() {
+  const [loggedIn, setLoggedIn] = useState(false);
   const [isBurgerOpen, setIsBurgerOpen] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = Cookies.get('token');
+    if (token) {
+      setLoggedIn(true);
+    }else{
+      setLoggedIn(false);
+    }
+  }, []);
 
   function logoHeader() {
     navigate("/");
@@ -16,13 +26,16 @@ function Header() {
   function toggleBurgerMenu() {
     setIsBurgerOpen(!isBurgerOpen);
   }
-  const [modal, setModal] = useState(false);
-  function openModal() {
-    setModal(true);
+
+  const handleLogin = () => {
+    navigate("/login");
   }
-  function closeModal() {
-    setModal(false);
+
+  const handleLogout = () => {
+    Cookies.remove('token');
+    setLoggedIn(false);
   }
+
 
   return (
     <div className="header">
@@ -75,32 +88,34 @@ function Header() {
             </div>
             <div
               style={{
-                display: modal ? "block" : "none",
+                display: loggedIn ? "block" : "none",
               }}
             >
-              <ToComeIn closeModal={closeModal} />
+              {/* <ToComeIn closeModal={() => {}} /> */}
             </div>
             <div className="header__enter">
-              {modal ? (
-                <button onClick={closeModal} className="products">
-                  close
+              {loggedIn ? (
+                <button style={{
+                  width: '140px'
+                }} onClick={handleLogout} className="products">
+                  Log Out
                 </button>
               ) : (
-                <button onClick={openModal} className="products">
+                <button onClick={handleLogin} className="products">
                   <span>
                     <SlArrowRightCircle />
                   </span>
-                  <p>Войти</p>
+                  <p>Login</p>
                 </button>
               )}
             </div>
             <div className="header__enter__two">
-              {modal ? (
-                <button onClick={closeModal} className="products">
-                  close
+              {loggedIn ? (
+                <button onClick={handleLogout} className="products">
+                  Logout
                 </button>
               ) : (
-                <button onClick={openModal} className="products">
+                <button onClick={handleLogin} className="products">
                   <span>
                     <SlArrowRightCircle />
                   </span>
