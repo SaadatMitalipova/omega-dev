@@ -1,12 +1,6 @@
 import ourResurce from "../OurResources/our.png";
 
-export const OurResources = ({
-  data,
-
-  }: { 
-  data: any ;
-
-}) => {
+export const OurResources = ({ data }: { data: any }) => {
   return (
     <>
       <section data-v-a2ede7f6 className="block devkg">
@@ -16,12 +10,8 @@ export const OurResources = ({
           </h4>
           {data &&
             data.map((item: any, index: number) => (
-              <a key={index} data-v-a2ede7f6 href={item.value} className="item">
-                <img
-                  className="icon icon-devkg"
-                  src={ourResurce}
-                  alt=""
-                />
+              <a data-v-a2ede7f6 href="/" className="item">
+                <img className="icon icon-devkg" src={ourResurce} alt="" />
                 {item.label}
               </a>
             ))}
@@ -30,4 +20,3 @@ export const OurResources = ({
     </>
   );
 };
-

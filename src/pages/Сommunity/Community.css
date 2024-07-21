@@ -28,7 +28,6 @@ button {
   border: none;
 }
 
-
 .community-main .block .title[data-v-a2ede7f6] {
   flex: 1 1 100%;
   color: #a7b0c2;
@@ -49,8 +48,7 @@ button {
 }
 
 .icon-devkg {
-  max-width: 40px;
-  height: 40px;
+  max-width: 54px;
 }
 
 .community-main .block .item[data-v-a2ede7f6] {
@@ -62,32 +60,31 @@ button {
   margin-bottom: 13px;
   padding-right: 8px;
   color: #fff;
-  padding-left: 10px;
   display: inline-flex;
   align-items: center;
   font-size: 16px;
 }
 
 .community-main .block.devkg .item[data-v-a2ede7f6] {
-  background: #0085ff;
+  background: #68aef0;
 }
 .community-main .block.telegram_chats .item[data-v-a2ede7f6] {
-  background: #2ca5e0;
+  background: #86cff4;
 }
 .community-main .block.telegram_channels .item[data-v-a2ede7f6] {
-  background: #2ca5e0;
+  background: #68aef0;
 }
 .community-main .block.websites .item[data-v-a2ede7f6] {
-  background: #6fcf97;
+  background: #7ed7a3;
 }
 .community-main .block.facebook .item[data-v-a2ede7f6] {
-  background: #3b5998;
+  background: #5c62afe6;
 }
 .community-main .block.youtube .item[data-v-a2ede7f6] {
-  background: red;
+  background: rgba(238, 59, 59, 0.909);
 }
 .community-main .block.github .item[data-v-a2ede7f6] {
-  background: #262626;
+  background: #353333;
 }
 
 @media (min-width: 0) and (max-width: 576px) {
