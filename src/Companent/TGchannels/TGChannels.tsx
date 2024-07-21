@@ -11,7 +11,7 @@ export const TGChannels = ({ data }: { data: any }) => {
               <a key={index} data-v-a2ede7f6 href={item.value} className="item">
                 <img
                   className="icon icon-devkg"
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT72LJm5Em_1UXq5xStSgkCug4IDZAce62RJw&usqp=CAU"
+                  src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQEtalW1cKJ9RWV35Z-S-mWrTlLnvmvGwg14GugfeHSYzoxYr5U"
                   alt=""
                 />
                 {item.label}

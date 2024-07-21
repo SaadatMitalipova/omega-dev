@@ -1,12 +1,6 @@
 import gitHub from "../GitHubList/Снимок экрана от 2024-07-16 14-14-13.png";
 
-export const GitHubList = ({
-  data,
-
-  }: { 
-  data: any ;
-
-})=> {
+export const GitHubList = ({ data }: { data: any }) => {
   return (
     <>
       <section data-v-a2ede7f6 className="block github">
@@ -19,7 +13,7 @@ export const GitHubList = ({
               <a key={index} data-v-a2ede7f6 href={item.value} className="item">
                 <img
                   className="icon icon-devkg"
-                  src={gitHub}
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRz7E3h_diZBMek08ynim3p2sh7ryfqU-VxOvdFEw4iwmFiky-J"
                   alt=""
                 />
                 {item.label}

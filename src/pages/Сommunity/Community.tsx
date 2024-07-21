@@ -1,40 +1,43 @@
 import { useEffect, useState } from "react";
-import { FacebookList } from "../../Companent/FacebookList/FacebookList";
 import Footer from "../../Companent/Footer/Footer";
-import { GitHubList } from "../../Companent/GitHubList/GitHubList";
 import Header from "../../Companent/Header/Header";
+import useFetch from "../../hooks/useFetch";
+import "../Сommunity/Community.css";
 import { OurResources } from "../../Companent/OurResources/OurResources";
 import { TelegramChat } from "../../Companent/TelegramChat/telegramCgat";
 import { TGChannels } from "../../Companent/TGchannels/TGChannels";
-import { Websites } from "../../Companent/WebSites/WebSites";
+import { FacebookList } from "../../Companent/FacebookList/FacebookList";
 import { YouTubeList } from "../../Companent/YouTubeList/YouTubeList";
-import useFetch from "../../hooks/useFetch";
-import "../Сommunity/Community.css";
+import { GitHubList } from "../../Companent/GitHubList/GitHubList";
+import { WebSites } from "../../Companent/WebSites/WebSites";
 
 function Community() {
   const { data, isLoading } = useFetch({
     API_URL: "http://3.38.98.134/community",
   });
-  const [telegram, setTelegram] = useState([]);
+
   const [telegramChat, setTelegramChat] = useState([]);
-  const [tgChannels, setTGChannels] = useState([]);
-  const [webSites, setWebSites] = useState([]);
+  const [telegramm, setTelegramm] = useState([]);
+  const [telegramChannels, setTelegramChannels] = useState([]);
+  const [website, setWebsite] = useState([]);
   const [facebook, setFacebook] = useState([]);
-  const [youtube, setYouTube] = useState([]);
-  const [gitHub, setGitHub] = useState([]);
+  const [youtube, setYoutube] = useState([]);
+  const [github, setGitHub] = useState([]);
 
   useEffect(() => {
     if (isLoading === false) {
-      setTelegramChat(data[0]?.devkg);
-      setTelegram(data[0]?.telegram_chats);
-      setTGChannels(data[0]?.telegram_channels);
-      setWebSites(data[0]?.websites);
+      console.log("data: ", data);
+      setTelegramChat(data[0]?.telegram_chats);
+      setTelegramm(data[0]?.devkg);
+      setTelegramChannels(data[0]?.telegram_channels);
+      setWebsite(data[0]?.websites);
       setFacebook(data[0]?.facebook);
-      setYouTube(data[0]?.youtube);
+      setYoutube(data[0]?.youtube);
       setGitHub(data[0]?.github);
-      // console.log("data");
     }
   }, [isLoading]);
+
+  console.log("telegram", telegramChat);
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -46,7 +49,7 @@ function Community() {
         <div id="community">
           <div className="container">
             <div className="community">
-              <div data-v-a2ede7f6 className="community-main content">
+              <div className="community-main">
                 <div data-v-a2ede7f6 className="heading">
                   <div data-v-a2ede7f6 className="description">
                     Если хотите добавить что либо или удалить, отправьте Pull
@@ -57,13 +60,14 @@ function Community() {
                   </button>
                 </div>
                 <aside data-v-a2ede7f6 className="share-box"></aside>
-                <OurResources data={telegram} />
+                <OurResources data={telegramm} />
                 <TelegramChat data={telegramChat} />
-                <TGChannels data={tgChannels} />
-                <Websites data={webSites} />
+                <TGChannels data={telegramChannels} />
+                <WebSites data={website} />
                 <FacebookList data={facebook} />
                 <YouTubeList data={youtube} />
-                <GitHubList data={gitHub} />
+                <GitHubList data={github} />
+
                 <div data-v-a2ede7f6 className="padding-top"></div>
               </div>
             </div>
