@@ -1,4 +1,3 @@
-import React from "react";
 import "./App.css";
 import Home from "./pages/Home/Home";
 import Vacancies from "./pages/Vacancies/Vacancies";
@@ -7,6 +6,9 @@ import Video from "./pages/Video/Video";
 import Organizations from "./pages/Organizations/Organizations";
 import Community from "./pages/Сommunity/Community";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import ProtectedRoute from "./Companent/ProtectedRoute";
+import Login from "./Companent/Login";
+import Signup from "./Companent/SignUp";
 
 const router = createBrowserRouter([
     {
@@ -15,7 +17,11 @@ const router = createBrowserRouter([
     },
     {
         path: "/vacancies",
-        element: <Vacancies />,
+        element: (
+            <ProtectedRoute>
+                <Vacancies />
+            </ProtectedRoute>
+        ),
     },
     {
         path: "/events",
@@ -33,6 +39,14 @@ const router = createBrowserRouter([
         path: "/community",
         element: <Community />,
     },
+    {
+        path: "/login",
+        element: <Login />
+    },
+    {
+        path: '/signup',
+        element: <Signup />
+    }
   
 ]);
 
