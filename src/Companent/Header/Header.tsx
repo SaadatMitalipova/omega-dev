@@ -91,7 +91,6 @@ function Header() {
                 display: loggedIn ? "block" : "none",
               }}
             >
-              {/* <ToComeIn closeModal={() => {}} /> */}
             </div>
             <div className="header__enter">
               {loggedIn ? (

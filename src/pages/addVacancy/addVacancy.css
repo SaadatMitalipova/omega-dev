@@ -1,0 +1,217 @@
+.add-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  gap: 40px;
+}
+.header-addVacancy {
+  z-index: 101;
+  width: 225px;
+  position: sticky;
+  background-color: #fff;
+  padding: 23px 34px;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  display: flex;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  transition: 0.4s;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.header-logo-add {
+  padding-bottom: 20px;
+}
+.header__nav-add {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.addVacancy-title {
+  color: #191f5d;
+}
+
+.addVacancy-text {
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  color: #191f5d;
+  margin-bottom: 40px;
+  margin-right: 38px;
+}
+label {
+  display: block;
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  font-weight: 700;
+  color: #a7b0c2;
+  margin-bottom: 8px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea,
+select {
+  padding: 10px 200px 10px 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+textarea {
+  height: 100px;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn1 {
+  cursor: default;
+  background: #e5e5e5;
+  color: #191f5d;
+}
+
+.btn1:hover {
+  background: #1eb300;
+}
+
+#description-length {
+  display: block;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  color: #777;
+}
+
+.header__burger {
+  display: none;
+  cursor: pointer;
+}
+.hamburger {
+  padding: 15px 15px;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin-top: 5px;
+  overflow: visible;
+}
+.hamburger-box {
+  width: 24px;
+  height: 16px;
+  display: inline-block;
+  position: relative;
+}
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px;
+}
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+  width: 24px;
+  height: 2px;
+  background-color: #000;
+  border-radius: 2px;
+  position: absolute;
+  transition-property: transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+}
+.hamburger-inner::before,
+.hamburger-inner::after {
+  content: "";
+  display: block;
+}
+.hamburger-inner::before {
+  top: -6px;
+}
+.hamburger-inner::after {
+  bottom: -6px;
+}
+.hamburger.is-active .hamburger-inner {
+  transform: rotate(45deg);
+}
+.hamburger.is-active .hamburger-inner::before {
+  top: 0;
+  transform: rotate(90deg);
+}
+.hamburger.is-active .hamburger-inner::after {
+  bottom: 0;
+  transform: rotate(90deg);
+}
+
+.burger-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  justify-content: flex-start;
+  z-index: 1000;
+}
+.burger-menu.active {
+  display: flex;
+}
+.burger-menu__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 20px;
+}
+.burger-menu__list a {
+  color: #090808d8;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+  .header__nav-add {
+    display: none;
+  }
+  .header__burger {
+    display: block;
+  }
+  .add-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header-addVacancy {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .goOut {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 445px){
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea,
+  select {
+    padding: 10px 45px 10px 5px;
+  }
+  .img-logo{
+    width: 80px;
+    height: 40px;
+  }
+}
