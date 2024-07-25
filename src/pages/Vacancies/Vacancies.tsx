@@ -23,7 +23,7 @@ function Vacancies() {
           <div className="vacancies">
             <div className="vacancies__content">
               <div className="filter" data-v-6a5c720c>
-                <Link to={"/"}>
+                <Link to={"/addVacancy"}>
                   <button
                     className="add-vacancies create-list green"
                     data-v-3fc4231a

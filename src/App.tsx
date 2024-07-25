@@ -8,40 +8,50 @@ import Community from "./pages/Сommunity/Community";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Login from "./Companent/Login";
 import Signup from "./Companent/SignUp";
+import AddVacancy from "./pages/addVacancy/addVacancy";
 
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />,
-  },
-  {
-    path: "/vacancies",
-    element: <Vacancies />,
-  },
-  {
-    path: "/events",
-    element: <Events />,
-  },
-  {
-    path: "/video",
-    element: <Video />,
-  },
-  {
-    path: "/organizations",
-    element: <Organizations />,
-  },
-  {
-    path: "/community",
-    element: <Community />,
-  },
-  {
-    path: "/login",
-    element: <Login />,
-  },
-  {
-    path: "/signup",
-    element: <Signup />,
-  },
+    {
+        path: "/",
+        element: <Home />,
+    },
+    {
+        path: "/vacancies",
+        element: (
+            <ProtectedRoute>
+                <Vacancies />
+            </ProtectedRoute>
+        ),
+    },
+    {
+        path: "/events",
+        element: <Events />,
+    },
+    {
+        path: "/video",
+        element: <Video />,
+    },
+    {
+        path: "/organizations",
+        element: <Organizations />,
+    },
+    {
+        path: "/community",
+        element: <Community />,
+    },
+    {
+        path: "/login",
+        element: <Login />
+    },
+    {
+        path: '/signup',
+        element: <Signup />
+    },
+    {
+        path: '/addVacancy',
+        element: <AddVacancy />
+    }
+  
 ]);
 
 function App() {
