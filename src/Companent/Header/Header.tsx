@@ -34,6 +34,7 @@ function Header() {
   const handleLogout = () => {
     Cookies.remove('token');
     setLoggedIn(false);
+    navigate("/addVacancy");
   }
 
 
@@ -97,7 +98,7 @@ function Header() {
                 <button style={{
                   width: '140px'
                 }} onClick={handleLogout} className="products">
-                  Log Out
+                  Кабинет
                 </button>
               ) : (
                 <button onClick={handleLogin} className="products">
@@ -111,7 +112,7 @@ function Header() {
             <div className="header__enter__two">
               {loggedIn ? (
                 <button onClick={handleLogout} className="products">
-                  Logout
+                  Кабинет
                 </button>
               ) : (
                 <button onClick={handleLogin} className="products">

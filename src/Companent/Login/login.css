@@ -32,6 +32,9 @@ input {
   background-color: rgb(0, 68, 255);
 }
 
+.title-NotLoggedIn{
+  font-size: 26px;
+}
 a{
   text-decoration: none;
 }

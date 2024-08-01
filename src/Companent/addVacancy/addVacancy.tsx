@@ -3,6 +3,7 @@ import Footer from "../../Companent/Footer/Footer";
 import "..//addVacancy/addVacancy.css";
 import { Link, useNavigate } from "react-router-dom";
 import { VscClose } from "react-icons/vsc";
+import AddJobList from "./addJobList";
 function AddVacancy() {
   document.addEventListener("DOMContentLoaded", () => {
     const description = document.getElementById(
@@ -107,63 +108,7 @@ function AddVacancy() {
               <span>Выйти</span>
             </Link>
           </div>
-          <div className="addVacancy-content">
-            <h1 className="addVacancy-title">Добавить новую вакансию</h1>
-            <p className="addVacancy-text">
-              Вакансия должна относиться к сфере информационных технологий и
-              будет опубликована после проверки модератором
-            </p>
-
-            <form id="vacancy-form">
-              <label htmlFor="position">Должность*</label>
-              <input
-                type="text"
-                id="position"
-                placeholder='Например "QA Manager / QA Engineer"'
-                required
-              />
-
-              <label htmlFor="description">Описание вакансии*</label>
-              <textarea
-                id="description"
-                placeholder="Здесь необходимо указать условия труда, требования и обязанности. Также вы можете указать краткое описание компании, например: 'В дружный отдел дизайна игровой студии 'Bloody Fun' требуется проект менеджер со стажем'"
-                required
-              ></textarea>
-              <span id="description-length">
-                Длина текста: 0 символов, минимально допустимое значение 200
-                символов
-              </span>
-
-              <label htmlFor="telegram">Telegram</label>
-              <input className="add-input" type="text" id="telegram" placeholder="murabekova_s" />
-
-              <label htmlFor="skype">Skype</label>
-              <input className="add-input" type="text" id="skype" />
-
-              <label htmlFor="email">E-Mail</label>
-              <input className="add-input" type="email" id="email" />
-
-              <label htmlFor="phone">Телефон</label>
-              <input className="add-input" type="tel" id="phone" />
-
-              <label htmlFor="type">Тип*</label>
-              <select id="type" required>
-                <option value="" disabled selected>
-                  Выберите тип работы
-                </option>
-                <option value="full-time">Полная занятость</option>
-                <option value="part-time">Частичная занятость</option>
-                <option value="remote">Удаленная работа</option>
-              </select>
-
-              <div className="buttons">
-                <button className="btn1" type="button" id="save-button">
-                  Сохранить
-                </button>
-                <button className="btn1" type="submit">Продолжить</button>
-              </div>
-            </form>
-          </div>
+          <AddJobList/>
         </div>
       </div>
       <Footer />

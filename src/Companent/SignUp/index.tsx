@@ -12,6 +12,7 @@ const Signup = () => {
   const navigate = useNavigate();
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   const handleSignup = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -25,10 +26,12 @@ const Signup = () => {
         navigate("/");
       }
       alert(response.data.message);
+      navigate('/addVacancy');
+
     } catch (error) {
-      console.error("Signup kilganda error chikti", error);
       alert("Signup bolbodu");
     }
+
   };
 
   return (
@@ -37,7 +40,7 @@ const Signup = () => {
       <div className="container">
         <div className="login-content">
           <div className="login">
-            <h1>Signup</h1>
+            <h1>Зарегистрироваться</h1>
             <form onSubmit={handleSignup}>
               <input
                 type="text"
@@ -45,26 +48,27 @@ const Signup = () => {
                 value={userName}
                 onChange={(e) => setUserName(e.target.value)}
                 name="username"
-                placeholder="Username"
+                placeholder="Email пользователя"
+              />
+
+              <input
+                id="password"
+                name="password"
+                type="password"
+                placeholder="Пароль"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
               <input
                 type="password"
                 id="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
                 name="password"
-                placeholder="Password"
-              />
-              <input
-                type="password"
-                id="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                name="password"
-                placeholder="Confirm password"
+                placeholder="Подтвердите пароль"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
               />
               <button className="btn-login" type="submit">
-                Signup
+              Зарегистрироваться
               </button>
             </form>
             <div
@@ -76,16 +80,16 @@ const Signup = () => {
                 alignItems: "center",
               }}
             >
-              <h1>Logged</h1>
+              <h1 className="title-NotLoggedIn">Зарегистрирован</h1>
               <a
                 style={{
-                  fontSize: 20,
+                  fontSize: 16,
                   paddingTop: 10,
                 }}
                 href="/login"
               >
                 {" "}
-                Login
+                Войти
               </a>
             </div>
           </div>
@@ -96,3 +100,20 @@ const Signup = () => {
   );
 };
 export default Signup;
+
+// const [username, setUsername] = useState("");
+// const [password, setPassword] = useState("");
+
+// const handleSignup = () => {
+//   if (password !== confirmPassword) {
+//     alert("Passwords do not match");
+//     return;
+//   }
+//   alert("Signup successful");
+// };
+
+// <div>
+//   <h2>Signup</h2>
+
+//   <button onClick={handleSignup}>Signup</button>
+// </div>;

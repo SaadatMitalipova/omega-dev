@@ -23,10 +23,11 @@ const Login = () => {
       if (response.data.success) {
         Cookies.set("token", response.data.token, { expires: 7 });
         navigate("/");
+        
       }
       alert(response.data.message);
+      navigate('/addVacancy');
     } catch (error) {
-      console.error("Login kilganda error chikti", error);
       alert("Login bolbodu");
     }
   };
@@ -37,7 +38,7 @@ const Login = () => {
       <div className="container">
         <div className="login-content">
           <div className="login">
-            <h1>Login</h1>
+            <h1>Войти</h1>
             <form onSubmit={handleLogin}>
               <input
                 type="text"
@@ -45,7 +46,7 @@ const Login = () => {
                 value={userName}
                 onChange={(e) => setUserName(e.target.value)}
                 name="username"
-                placeholder="Username"
+                placeholder="Email пользователя"
               />
               <input
                 type="password"
@@ -53,10 +54,10 @@ const Login = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 name="password"
-                placeholder="Password"
+                placeholder="Пароль"
               />
               <button className="btn-login" type="submit">
-                Login
+                Войти
               </button>
             </form>
             <div
@@ -68,16 +69,15 @@ const Login = () => {
                 alignItems: "center",
               }}
             >
-              <h1 className="title-NotLoggedIn">Not Logged In?</h1>
+              <h1 className="title-NotLoggedIn">Не вошел?</h1>
               <a
                 style={{
-                  fontSize: 20,
+                  fontSize: 16,
                   paddingTop: 10,
                 }}
                 href="/signup"
               >
-                {" "}
-                Sign up
+                Зарегистрироваться
               </a>
             </div>
           </div>
