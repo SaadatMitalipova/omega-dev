@@ -3,8 +3,8 @@ import Footer from "../../Companent/Footer/Footer";
 import "..//addVacancy/addVacancy.css";
 import { Link, useNavigate } from "react-router-dom";
 import { VscClose } from "react-icons/vsc";
-import AddJobList from "./addJobList";
-function AddVacancy() {
+import AddEvent from "./addEvent";
+function AddEventList() {
   document.addEventListener("DOMContentLoaded", () => {
     const description = document.getElementById(
       "description"
@@ -108,7 +108,7 @@ function AddVacancy() {
               <span>Выйти</span>
             </Link>
           </div>
-          <AddJobList />
+          <AddEvent />
         </div>
       </div>
       <Footer />
@@ -116,4 +116,4 @@ function AddVacancy() {
   );
 }
 
-export default AddVacancy;
+export default AddEventList;

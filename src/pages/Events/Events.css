@@ -56,7 +56,7 @@
 .events-item {
   display: flex;
   flex-direction: column;
-  background: rgb(26, 30, 31);
+  background: rgb(2, 71, 89);
   margin: 20px 0 20px 0;
   opacity: 0.5;
   filter: blur(9px);

@@ -1,9 +1,11 @@
 export const JobList = ({
+  imgUrl,
   organization_name,
   companyRole,
   salary,
   jobType,
 }: {
+  imgUrl: string;
   organization_name: string;
   companyRole: string;
   salary: string;
@@ -25,7 +27,7 @@ export const JobList = ({
             >
               <picture data-v-7ad410c8>
                 <img
-                  src="https://devkg.com/images/organizations/886e28d889f4c24ea73c66b80174110f.webp"
+                  src={imgUrl}
                   alt=""
                   data-v-7ad410c8
                 />
