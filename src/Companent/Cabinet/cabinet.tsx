@@ -3,52 +3,51 @@ import Footer from "../../Companent/Footer/Footer";
 import "..//addVacancy/addVacancy.css";
 import { Link, useNavigate } from "react-router-dom";
 import { VscClose } from "react-icons/vsc";
-import AddJobList from "./addJobList";
-function AddVacancy() {
-  document.addEventListener("DOMContentLoaded", () => {
-    const description = document.getElementById(
-      "description"
-    ) as HTMLTextAreaElement;
-    const descriptionLength = document.getElementById(
-      "description-length"
-    ) as HTMLSpanElement;
-    const saveButton = document.getElementById(
-      "save-button"
-    ) as HTMLButtonElement;
-    const form = document.getElementById("vacancy-form") as HTMLFormElement;
-
-    description.addEventListener("input", () => {
-      descriptionLength.textContent = `Длина текста: ${description.value.length} символов, минимально допустимое значение 200 символов`;
-    });
-
-    saveButton.addEventListener("click", () => {
-      alert("Сохранено");
-    });
-
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
-      if (description.value.length < 200) {
-        alert("Описание вакансии должно быть не менее 200 символов.");
-      } else {
-        alert("Форма отправлена");
-        form.reset();
-        descriptionLength.textContent =
-          "Длина текста: 0 символов, минимально допустимое значение 200 символов";
+function Cabinet() {
+    document.addEventListener("DOMContentLoaded", () => {
+        const description = document.getElementById(
+          "description"
+        ) as HTMLTextAreaElement;
+        const descriptionLength = document.getElementById(
+          "description-length"
+        ) as HTMLSpanElement;
+        const saveButton = document.getElementById(
+          "save-button"
+        ) as HTMLButtonElement;
+        const form = document.getElementById("vacancy-form") as HTMLFormElement;
+    
+        description.addEventListener("input", () => {
+          descriptionLength.textContent = `Длина текста: ${description.value.length} символов, минимально допустимое значение 200 символов`;
+        });
+    
+        saveButton.addEventListener("click", () => {
+          alert("Сохранено");
+        });
+    
+        form.addEventListener("submit", (event) => {
+          event.preventDefault();
+          if (description.value.length < 200) {
+            alert("Описание вакансии должно быть не менее 200 символов.");
+          } else {
+            alert("Форма отправлена");
+            form.reset();
+            descriptionLength.textContent =
+              "Длина текста: 0 символов, минимально допустимое значение 200 символов";
+          }
+        });
+      });
+      const navigate = useNavigate();
+    
+      function logoHeader() {
+        navigate("/");
       }
-    });
-  });
-  const navigate = useNavigate();
-
-  function logoHeader() {
-    navigate("/");
-  }
-
-  const [isBurgerOpen, setIsBurgerOpen] = useState(false);
-
-  function toggleBurgerMenu() {
-    setIsBurgerOpen(!isBurgerOpen);
-  }
-
+    
+      const [isBurgerOpen, setIsBurgerOpen] = useState(false);
+    
+      function toggleBurgerMenu() {
+        setIsBurgerOpen(!isBurgerOpen);
+      }
+    
   return (
     <>
       <div className="container">
@@ -108,12 +107,11 @@ function AddVacancy() {
               <span>Выйти</span>
             </Link>
           </div>
-          <AddJobList />
+          <Footer/>
         </div>
       </div>
-      <Footer />
     </>
   );
 }
 
-export default AddVacancy;
+export default Cabinet;

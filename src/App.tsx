@@ -9,8 +9,8 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Login from "./Companent/Login";
 import Signup from "./Companent/SignUp";
 import AddVacancy from "./Companent/addVacancy/addVacancy";
-import AddJobList from "./Companent/addVacancy/addJobList";
 import RouteProtector from "./Companent/RouterProtect";
+import AddEventList from "./Companent/addEvent/addEventList";
 
 const router = createBrowserRouter([
   {
@@ -54,8 +54,12 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/addJobList",
-    element: <AddJobList />,
+    path: "/addEventList",
+    element: (
+      <RouteProtector>
+        <AddEventList />
+      </RouteProtector>
+    ),
   },
 ]);
 

@@ -1,0 +1,48 @@
+.form-group {
+    margin-bottom: 20px;
+}
+
+.label, .input, .textarea, .file-input, .btn, .select, small {
+    display: block;
+    padding: 10px 200px 10px 5px;
+    margin-bottom: 10px;
+}
+
+.input, .textarea, .file-input, .select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.textarea {
+    height: 100px;
+}
+
+.btn {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.required-fields {
+    color: red;
+    font-size: 0.8em;
+    display: none;
+}
+
+.addEvent-inputs{
+    padding: 10px 200px 10px 5px;
+
+}
+small{
+    color: #b6b0b0;  
+  }
+  

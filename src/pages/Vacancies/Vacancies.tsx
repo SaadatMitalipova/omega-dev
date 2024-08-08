@@ -37,7 +37,8 @@ function Vacancies() {
               {data &&
                 data.map((item: any, index: number) => (
                   <JobList
-                  key={index}
+                    key={index}
+                    imgUrl={item?.organization_icon}
                     organization_name={item?.organization_name}
                     companyRole={item?.position}
                     salary={`${item?.price_from}${item?.price_to > 0 ? `- ${item?.price_to}` : ''} ${item?.currency} ${item?.salary}`}

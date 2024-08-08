@@ -21,7 +21,9 @@ function Events() {
         <div className="container">
           <div className="events">
             <div className="events__button">
-              <button>Добавить мероприятие</button>
+              <a href="/addEventList">
+                <button>Добавить мероприятие</button>
+              </a>
             </div>
 
             {data &&
